@@ -1,0 +1,19 @@
+{
+  "name": "Rust Notebook",
+  "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/rust:1": {},
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.12"
+    }
+  },
+  "postCreateCommand": "python -m pip install --user jupyterlab ipykernel && cargo install --locked evcxr_jupyter && evcxr_jupyter --install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-toolsai.jupyter",
+        "rust-lang.rust-analyzer"
+      ]
+    }
+  }
+}
